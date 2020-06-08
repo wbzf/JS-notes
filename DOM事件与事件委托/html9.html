@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>透药娘</title>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <script>
+        setTimeout(()=>{
+            const button = document.createElement('button')
+            button.textContent = 'click 1'
+            div1.appendChild(button)
+        },2000)
+        div1.addEventListener('click',(e)=>{
+            const t = e.target
+            if(t.tagName.toLowerCase() === 'button'){
+                console.log('成功透药娘')
+            }
+        })
+    </script>
+</body>
+</html>

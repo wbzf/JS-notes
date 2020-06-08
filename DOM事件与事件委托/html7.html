@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>透药娘</title>
+</head>
+<body>
+  <div id=div1>
+    <button id=button1>点击触发透药娘事件     
+    </button>
+  </div>
+  <script>
+    button1.addEventListener('click', ()=>{
+    const event = new CustomEvent("药娘", {"detail":{name:'药娘', age: 18}}) // 新建自定义事件 事件名 事件信息
+    button1.dispatchEvent(event)
+    })
+
+    button1.addEventListener('药娘', (e)=>{ // 监听药娘事件
+    console.log('透药娘')
+    console.log(e)
+    })
+
+    // 默认是不能触发事件冒泡的 需要设置bubbles:true
+    // button1.addEventListener('click', ()=>{
+    //     const event = new CustomEvent('药娘', {
+    //         "detail":{name:'frank',age:18},
+    //         // bubbles:true
+    //     })
+    //     button1.dispatchEvent(event)
+    // })
+
+    // div1.addEventListener('药娘', (e)=>{
+    //     console.log("想要透药娘")
+    //     console.log(e.detail)
+    // })
+  </script>
+</body>
+</html>

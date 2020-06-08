@@ -35,7 +35,7 @@
 // };
 
 // let square3 = {...}
-// 药娘都比你聪明
+
 
 // 用for循环搞定;
 // let squareList = [];
