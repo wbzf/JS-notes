@@ -77,3 +77,73 @@
 // 我就想展示{{n}}
 // <div v-pre>{{n}}</div>
 // v-pre 不会对模板进行编译
+
+// 绑定属性
+// 绑定src
+// <img v-bind:src="x" />
+
+// v-bind:简写为:
+// <img :src="x" />
+
+// 绑定对象
+// <div>
+// :style="{border: '1px solid red', height:100}"
+// </div>
+// // 注意这里可以把'100px'写成100
+
+// 绑定事件
+// v-on:事件名
+// <button v-on:click="add">+1</button>
+// 点击之后 Vue会运行add()
+// <button v-on:click="xxx(1)">xxx</button>
+// 点击之后 Vue会运行xxx(1)
+// <button v-on:click="n+=1">xxx</button>
+// 点击之后 Vue会运行n+=1
+// 即发现函数就加括号调用 否则就直接运行代码
+
+// 缩写
+// <button @click="add">+1</button>
+// 正常人都用缩写
+
+// 条件判断
+// if...else
+// <div v-if="x>0">
+//     x大于0
+// </div>
+// <div v-else-if="x===0">
+//     x为0
+// </div>
+// <div v-else>
+//     x小于0
+// </div>
+
+// 循环
+// for(value,key) in 对象或数组
+
+// <ul>
+//     <li v-for="(u,index) in users" :key="index">
+//         索引: {{index}} 值: {{u.name}}
+//     </li>
+// </ul>
+
+// <ul>
+//     <li v-for="(value, name) in obj" :key="name">
+//         属性名: {{name}} 属性值: {{value}}
+//     </li>
+// </ul>
+
+// 显示 隐藏
+// v-show
+// <div v-show="n%2===0">n 是偶数</div>
+
+// 近似等于
+// <div :style="{display:n%2===0? 'block' : 'none'}">n 是偶数</div>
+// 注意 看得见的元素display不只有block
+// 如table的display为table
+// 如li的display为list-item
+
+// Vue模板主要特点有
+// 使用XML语法
+// 使用{{}}插入表达式
+// 使用v-html v-on v-bind 等指令操作dom
+// 使用v-if v-for等指令实现条件判断和循环
