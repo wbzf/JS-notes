@@ -153,6 +153,81 @@
 // 同理
 // React组件也有这些过程 我们称之为生命周期
 
+// 函数列表
+// constructor() // 在这里初始化state
+// static getDerivedStateFromProps()
+// shouldComponentUpdate() // return false 阻止更新
+// render() // 创建虚拟DOM
+// getSnapshotBeforeUpdate()
+// componentDidMount() // 组件已出现在页面
+// componentDidUpdate() // 组件已更新
+// componentWillUnmount() // 组件将死
+// static getDerivedStateFromError()
+// componentDidCatch()
+
+// constructor
+// 用途
+// 初始化props
+// 初始化state 但此时不能调用setState
+// 用来bind this
+// constructor(){
+//     /*其他代码略*/
+//     this.onClick = this.onClick.bind(this)
+// }
+// 可以用新语法代替
+// onClick = () => {}
+// constructor(){/*其他代码略*/}
+// 可不写
+
+// shouldComponentUpdate
+// 用途
+// 返回true表示不阻止UI更新
+// 返回false表示阻止UI更新
+// demo3
+
+// 面试常问
+// shouldComponentUpdate有什么用
+// 它允许我们手动判断是否要进行组件更新 我们可
+// 已根据应用场景灵活的设置返回值 以免不必要的更新
+
+// 其实可以将newState和this.state的每个属性都对比一下
+// 如果全都相等 就不更新
+// 如果有一个不等 就更新
+
+// React内置了这个功能叫做React.PureComponent
+// 可以代替React.Component
+// demo4
+
+// render
+// 用途
+// 展示视图
+// return (<div>...</div>)
+// 只能有一个根元素
+// 如果有两个根元素 就要用<React.Fragment>包起
+// <React.Fragment/>可以缩写成<></>
+
+// 技巧
+// render里面可以写 if...else
+// render里面可以写?:表达式
+// render里面不能直接写for循环 需要用到数组
+// render里面可以写array.map(循环)
+
+// componentDidMount()
+// 用途
+// 在元素插入页面后执行代码 这些代码依赖DOM
+// 比如你想获取div的高度 就最好在这里写
+// 此处可以发起加载数据的AJAX请求
+// 首次渲染会执行此钩子
+
+// 参数
+// 看文档
+
+
+
+
+
+
+
 
 
 
